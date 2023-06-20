@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import protectedRoutes from "./protectedRoutes";
 import routes from "./routes";
 import { NotFound } from "../Pages";
+import { Protected } from "../Components";
 
 const Router = () => {
 
@@ -20,7 +21,7 @@ const Router = () => {
 						);
 					})}
 
-					{/* {protectedRoutes.map((route) => {
+					{protectedRoutes.map((route) => {
 						return (
 							<Route
 								key={route.path}
@@ -28,7 +29,7 @@ const Router = () => {
 								element={<Protected>{route.element}</Protected>}
 							/>
 						);
-					})} */}
+					})}
 					<Route
 						path="*"
 						element={

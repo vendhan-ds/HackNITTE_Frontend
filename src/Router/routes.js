@@ -33,12 +33,12 @@ const routes = [
         description:" ",
         element:<Profile/>,
     },
-
+    {
         title : "Register",
         path : "/register",
         description : "Register Page",
         element  : <Register />,
-    },
+    }
 ];
 
 

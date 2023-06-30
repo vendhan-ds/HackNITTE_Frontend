@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(126.06% 52.49% at 70.94% 80.09%, rgba(204, 27, 98, 0.50) 0%, rgba(25, 167, 206, 0.00) 100%), radial-gradient(98.95% 67.55% at 16.80% 27.92%, rgba(57, 49, 123, 0.50) 0%, rgba(25, 167, 206, 0.00) 100%), #191825;
+}
+
 .App {
   text-align: center;
   

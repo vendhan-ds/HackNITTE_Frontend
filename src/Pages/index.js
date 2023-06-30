@@ -4,3 +4,4 @@ export {default as Profile} from "./Profile/index";
 export {default as Admin} from "./AdminLogin/index";
 export {default as AdminPanel} from "./AdminPanel/index";
 export {default as Home} from "./Home/index";
+export {default as Register} from "./Register/index";

@@ -5,6 +5,66 @@ import { HeaderTabs } from "../../Components/header";
 import "./home.css"
 
 const Home=()=>{
+
+    const [contests,setContest]=useState([])
+
+    const getdata=async()=>{
+        let t=await axios.get("/api/getContests");
+      console.log(t.data.data)
+      const lc=t.data.data.leetcode;
+      const cc=t.data.data.codechef;
+      const cf=t.data.data.codeforces;
+      //const obj={};
+      const l=[];
+      lc.forEach(element => {
+        
+        const obj={
+            name:element.name,
+            date:element.start_time.slice(0,10),
+            type:"leetcode",
+            details:element.start_time.slice(11,19)+" Z",
+            link:element.url
+        }
+        l.push(obj) 
+        //setContest(contests.push(obj))
+        
+        
+      });
+      cf.forEach(element => {
+        
+        const obj={
+            name:element.name,
+            date:element.start_time.slice(0,10),
+            type:"codeforces",
+            details:element.start_time.slice(11,19)+" Z",
+            link:element.url
+        }
+        l.push(obj)
+        //setContest(contests.push(obj))
+        
+        
+      });
+      cc.forEach(element => {
+        
+        const obj={
+            name:element.name,
+            date:element.start_time.slice(0,10),
+            type:"codechef",
+            details:element.start_time.slice(10),
+            link:element.url
+        }
+        l.push(obj)
+        //setContest(contests.push(obj))
+        
+        
+      });
+      setContest(l);
+
+    }
+    useEffect(() => {
+      getdata();
+    }, []);
+
     const hackthn=[
         {
             name:"Flipkart grid 5.0",
@@ -15,46 +75,11 @@ const Home=()=>{
             date:93783837,
         }
     ]
-    const contests=[
-        {
-            name:"biweekly",
-            date:123,
-            type:"leetcode",
-            details:"lorem ipsum",
-            link:"hfigs@leetcode"
-        },
-        {
-            name:"starter",
-            date:129243,
-            type:"codechef",
-            details:"lorem ipsum2",
-            link:"hfigs@leetcode"
-        },
-        {
-            name:"codeTON",
-            date:122233,
-            type:"codeforces",
-            details:"lorem ipsum3",
-            link:"hfigs@leetcode"
-        },
-        {
-            name:"starter",
-            date:129243,
-            type:"codechef",
-            details:"lorem ipsum2",
-            link:"hfigs@leetcode"
-        },
-        {
-            name:"codeTON",
-            date:122233,
-            type:"codeforces",
-            details:"lorem ipsum3",
-            link:"hfigs@leetcode"
-        }
-    ]
+    
 
     const items2=hackthn.map((item,index)=>(
         <Grid.Col span={3}>
+            <a style={{textDecoration:"None",color:"inherit"}} href={`${item.link}`}>
             <Card className="card" key={index} shadow="sm" radius="sm" style={{backgroundColor:"rgba(0, 0, 0, 0.4)", padding:"5%",borderColor:"#4ecdd4", borderWidth:"1.5px",color:"white"}} withBorder >
                 <Group position="apart" mt="md" mb="xs">
                     <Text weight={500}>{item.name}</Text>
@@ -68,12 +93,13 @@ const Home=()=>{
                 
 
                 
-            </Card>
+            </Card></a>
         </Grid.Col>
     ))
 
     const items=contests.map((item,index)=>(
         <Grid.Col span={3}>
+            <a style={{textDecoration:"None",color:"inherit"}} href={`${item.link}`}>
             <Card className="card" key={index} shadow="sm" radius="sm" style={{backgroundColor:"rgba(0, 0, 0, 0.4)", padding:"5%",borderColor:"#4ecdd4", borderWidth:"1.5px",color:"white" }} withBorder>
                 <div style={{display:"flex",justifyContent:"flex-end"}}>
                     <Badge radius="xs" variant="gradient" gradient={{ from: 'black', to: '#4ecdd4', deg: 120 ,opacity:"0.7"}}>
@@ -94,7 +120,7 @@ const Home=()=>{
                     {item.details}
                 </Text>
                 <br></br>
-            </Card>
+            </Card></a>
         </Grid.Col>
         
     ))

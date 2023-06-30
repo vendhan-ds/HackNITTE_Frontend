@@ -1,0 +1,41 @@
+
+
+.profilepic{
+    justify-self: end;
+}
+
+.container h1{
+    font-size: 200%;
+    letter-spacing: 3px;
+}
+
+.headerdiv{
+    padding-right: 10%;
+    padding-left: 15%;
+    
+    font-size: x-large;
+    font-weight: 400;
+    
+}
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin:10px ;
+    
+}
+nav ul li:hover{
+    color: #4ecdd4;
+    scale: 1.05;
+}
+
+Link {
+    text-decoration: none;
+    color: inherit;
+}

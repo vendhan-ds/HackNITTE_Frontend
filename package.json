@@ -4,6 +4,11 @@
   "private": true,
   "proxy": "http://127.0.0.1:5000/",
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mantine/core": "^6.0.14",
+    "@mantine/hooks": "^6.0.14",
+    "@tabler/icons": "^2.23.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",

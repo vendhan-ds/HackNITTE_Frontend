@@ -1,12 +1,4 @@
-body {
-    padding: 20px;
-    padding-right: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: radial-gradient(126.06% 52.49% at 70.94% 80.09%, rgba(204, 27, 98, 0.50) 0%, rgba(25, 167, 206, 0.00) 100%), radial-gradient(98.95% 67.55% at 16.80% 27.92%, rgba(57, 49, 123, 0.50) 0%, rgba(25, 167, 206, 0.00)100%),#191825;  
-  } 
+
   .title-logo{
     position: absolute;
     top: 20px;
@@ -28,24 +20,13 @@ body {
     position: absolute;
     top: 48px;
     left: 120px;
-    color: #CFCFD9;
+    color: #ffffff;
     font-size: 35px;
   }
 
- .card {
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin-left: 4px;
-  margin-right: 4px;
-  background: linear-gradient(138.19deg, #191825 60.16%, #d6266c 141.47%);
-  border-radius: 8px;
-  max-width: 600px;
-  text-align: center;
-  border: 3px solid; 
-  border-image: linear-gradient(120deg, #19A7CE,  #CC1B62) 30; 
-}
-
+  label{
+    color: #24C6DC;
+  }
 
  .welcome {
     padding-top: 10px;
@@ -53,12 +34,13 @@ body {
     font-size: 33px;
     margin-top: -24px;
     margin-bottom: -10px;
+    text-align: center;
   }
   
   .login-text {
     font-weight: lighter;
     text-align: center;
-    color: #E1F2F5;
+    color: #24C6DC;
     font-size: 16px;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -69,7 +51,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-      margin: auto;
+    margin: auto;
   }
   
   input {
@@ -102,7 +84,7 @@ body {
     margin: auto;
   }
   .no-account{
-    color: #fff;
+    color: #24C6DC;
     font-size: 11px;
     margin-top: 1px;
   }
@@ -129,12 +111,23 @@ body {
     justify-content: center;
     width: 100%;
     padding: 1px;
-    background: linear-gradient(90.19deg, #CC1B62 0.16%, #39317B 111.47%);
+    background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%);
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: 0.5s;
+    background-size: 200% auto;
+    margin-top: 1rem;
   }
+
+ 
+  .login-btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
   
   /* Responsive Styles */
   

@@ -97,7 +97,7 @@ const NativeContest = () => {
                                 }
                             },
                             indicator : {
-                                backgroundImage : theme.fn.gradient({ from: '#CC1B62', to: '#39317B' }),
+                                backgroundImage : theme.fn.gradient({ from: '#24C6DC', to: '#514A9D' }),
                             },
                             
 
@@ -168,7 +168,7 @@ const NativeContest = () => {
                                 color : "white",
                               '&[data-selected]' : {
                                 '&, &:hover': {
-                                    backgroundImage: theme.fn.gradient({ from: '#CC1B62', to: '#39317B' }),
+                                    backgroundImage: theme.fn.gradient({ from: '#24C6DC', to: '#514A9D' }),
                                     color: "white",
                                     },
                               },
@@ -180,7 +180,7 @@ const NativeContest = () => {
                         })}
                     />
                     
-                <Button onClick={submit} variant="gradient" gradient={{ from: '#CC1B62', to: '#39317B', deg: 105 }}>Submit</Button>
+                <Button onClick={submit} variant="gradient" gradient={{ from: '#24C6DC', to: '#514A9D' }}>Submit</Button>
                 <p id="verdict"></p>
             </div>
             

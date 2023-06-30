@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-// import axios from 'axios';
+import axios from 'axios';
 import './register.css';
 import hacknitte from '../../Images/hacknitte.png'
 import show from '../../Images/show.png'
 import hide from '../../Images/hide.png';
+import { Link } from 'react-router-dom';
+
+
 function Register() {
   const [username, setuserName] = useState('');
   const [email, setEmail] = useState('');
@@ -48,17 +51,17 @@ function Register() {
     setShowConfirmPassword(!showConfirmPassword);
   }
 
+
+  const register = async() => {
+    let data = {'username' : username, 'email' : email, 'rollno' : rollno, 'codechef' : codechefId, 'codeforces' : codeforcesId, 'leetcode' : leetcodeId, 'password' : password, 'cpassword' : confirmPassword};
+    let req = await axios.post('/api/auth/register',data);
+    console.log(req);
+  }
   
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const emailPattern  = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
-
-    // if(!email.match(emailPattern)){
-    //   alert("Invalid Email");
-    //   return;
-    // }
-    // authentication here
+    register();
   };
 
     //  const [text, setText] = useState("");
@@ -76,11 +79,17 @@ function Register() {
       //   <h1>{Text}</h1>
       // </div>
       <div className="App">
-      <div className="title-logo-register">
+      {/* <div className="title-logo-register">
         <div className="logo"><img className="image-hack" src={hacknitte} alt="Logo"/></div>
         <div className="hacknitte">HACKNITTE</div>
-        </div>
-      <div className="card">
+        </div> */}
+        <div className="bg-animation">
+                <div id="stars"></div>
+                <div id="stars2"></div>
+                <div id="stars3"></div>
+                <div id="stars4"></div>
+            </div>
+      <div className="cardReg">
         <h1 className="welcome">HACKNITTE</h1>
         <h4 className="register-text">Register Here</h4>
         <form onSubmit={handleSubmit}>
@@ -116,7 +125,6 @@ function Register() {
           </div>
           <div className="input-wrapper">
             <input
-            required="true"
               type="text"
               id="codechefId"
               placeholder="Code Chef ID"
@@ -126,7 +134,6 @@ function Register() {
           </div>
           <div className="input-wrapper">
             <input
-                required="true"
               type="text"
               id="codeforcesId"
               placeholder="Code Forces ID"
@@ -136,7 +143,6 @@ function Register() {
           </div>
           <div className="input-wrapper">
             <input
-            required="true"
               type="text"
               id="leetcodeId"
               placeholder="Leetcode ID"
@@ -178,8 +184,13 @@ function Register() {
               />
             </button>
           </div>
-          <button type="submit" className="register-btn">
-           <p className="register">Register</p>
+          <div className="no-account-div">
+          <Link className="no-account" style={{
+            textDecoration:"None"
+          }} to="/"> Already have an account?</Link>
+          </div>
+          <button type="submit" className="login-btn">
+           <p className="login"><b>Register</b></p>
           </button>
         </form>
       </div>

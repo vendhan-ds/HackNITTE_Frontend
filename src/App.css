@@ -2,10 +2,13 @@
 
 body{
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(126.06% 52.49% at 70.94% 80.09%, rgba(204, 27, 98, 0.50) 0%, rgba(25, 167, 206, 0.00) 100%), radial-gradient(98.95% 67.55% at 16.80% 27.92%, rgba(57, 49, 123, 0.50) 0%, rgba(25, 167, 206, 0.00) 100%), #191825;
+  /* background: linear-gradient(135deg, #584EAE 5.02%, #CC1B62 100%); */
+  background: radial-gradient(280.03% 116.92% at 82.03% 77.64%, rgba(57, 49, 123, 0.50) 0%, rgba(25, 167, 206, 0.00) 74.10%), radial-gradient(98.95% 67.55% at 16.80% 27.92%, rgba(57, 49, 123, 0.50) 0%, rgba(25, 167, 206, 0.00) 100%), #191825;
+  background-repeat: no-repeat;
+  min-width: 100vw;
+  min-height: 100vh;
 }
-
-.App {
+  .App {
   text-align: center;
   
 }

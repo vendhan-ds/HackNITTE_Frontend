@@ -20,51 +20,51 @@ const Home=()=>{
             name:"biweekly",
             date:123,
             type:"leetcode",
-            details:"lorem ipsum",
             link:"hfigs@leetcode"
         },
         {
             name:"starter",
             date:129243,
             type:"codechef",
-            details:"lorem ipsum2",
             link:"hfigs@leetcode"
         },
         {
             name:"codeTON",
             date:122233,
             type:"codeforces",
-            details:"lorem ipsum3",
             link:"hfigs@leetcode"
         },
         {
             name:"starter",
             date:129243,
             type:"codechef",
-            details:"lorem ipsum2",
             link:"hfigs@leetcode"
         },
         {
             name:"codeTON",
             date:122233,
             type:"codeforces",
-            details:"lorem ipsum3",
             link:"hfigs@leetcode"
         }
     ]
 
+    const [ann,setann] = useState("Announcement : ");
+
+    const getann = async() => {
+        let res = await axios.get('/api/announcement');
+        setann("Announcement : " + res.data.data);
+    }
+    useEffect(() => {
+        getann();
+    },[])
+
     const items2=hackthn.map((item,index)=>(
         <Grid.Col span={3}>
-            <Card className="card" key={index} shadow="sm" radius="sm" style={{backgroundColor:"rgba(0, 0, 0, 0.4)", padding:"5%",borderColor:"#4ecdd4", borderWidth:"1.5px",color:"white"}} withBorder >
-                <Group position="apart" mt="md" mb="xs">
-                    <Text weight={500}>{item.name}</Text>
-                    
-                </Group>
-                <br></br>
-                <Text size="sm" >
-                    Date:{item.date}
+            <Card className="card" key={index} shadow="sm" radius="sm" style={{backgroundColor:"rgba(0, 0, 0, 0.2)", padding:"1rem",borderColor:"#4ecdd4", borderWidth:"1.5px",color:"white",textAlign : 'left'}} withBorder >
+                <Text weight={500}>{item.name}</Text>
+                <Text size="sm" style={{marginTop : "1rem"}} >
+                    Registration Ends on : <span className="blue">{item.date}</span>
                 </Text>
-                <br></br>
                 
 
                 
@@ -74,26 +74,21 @@ const Home=()=>{
 
     const items=contests.map((item,index)=>(
         <Grid.Col span={3}>
-            <Card className="card" key={index} shadow="sm" radius="sm" style={{backgroundColor:"rgba(0, 0, 0, 0.4)", padding:"5%",borderColor:"#4ecdd4", borderWidth:"1.5px",color:"white" }} withBorder>
+            <Card className="card" key={index} shadow="sm" radius="sm" style={{backgroundColor:"rgba(0, 0, 0, 0.2)", padding:"1rem",borderColor:"#4ecdd4", borderWidth:"1.5px",color:"white",textAlign :"left", height : '7rem' }} withBorder>
                 <div style={{display:"flex",justifyContent:"flex-end"}}>
-                    <Badge radius="xs" variant="gradient" gradient={{ from: 'black', to: '#4ecdd4', deg: 120 ,opacity:"0.7"}}>
+                    <Badge radius="xs" variant="gradient" gradient={{ from: 'transparent', to: '#4ecdd4', deg: 120 ,opacity:"0.5"}}>
                     {item.type}
                     </Badge>
                 </div>
                 
-                <Group position="apart" mt="md" mb="xs">
                     <Text weight={500}>{item.name}</Text>
                     
-                </Group>
-                <br></br>
-                <Text size="sm">
-                    Date:{item.date}
+                <Text size="sm" style={{marginTop : "1rem"}}>
+                    STARTS ON : <span className="blue">{item.date}</span>
                 </Text>
-                <br></br>
                 <Text size="sm" >
                     {item.details}
                 </Text>
-                <br></br>
             </Card>
         </Grid.Col>
         
@@ -102,23 +97,29 @@ const Home=()=>{
     return (
         <div className="main">
             <HeaderTabs></HeaderTabs>
-            
+            {/* <div className="bg-animation">
+                <div id="stars"></div>
+                <div id="stars2"></div>
+                <div id="stars3"></div>
+                <div id="stars4"></div>
+            </div> */}
             <div className="content">
-                {/* <div className="announcements">
-                    <h3>Announcements</h3>
+                <div className="announcements">
+                    <p>{ann}</p>
 
-                </div> */}
+                </div>
                 <div className="upcomingContests">
-                    <h1 style={{textAlign:"left"}}>UPCOMING CONTESTS </h1>
+                    <h2 style={{textAlign:"left"}}>UPCOMING CONTESTS </h2>
+                    <hr></hr>
                     <Grid  gutter="md">
                         {items}
                     </Grid>
                     
                 </div>
                 <br></br>
-                <Divider size="md" color="#4ecdd4"></Divider>
                 <div className="upcomingHackathons">
-                    <h3 style={{textAlign:"left"}}>UPCOMING HACKATHONS</h3>
+                    <h2 style={{textAlign:"left"}}>UPCOMING HACKATHONS</h2>
+                    <hr></hr>
                     <Grid  gutter="md">
                         {items2}
                     </Grid>

@@ -1,4 +1,4 @@
-import {Login,Admin,AdminPanel,Home,Profile,Register} from "../Pages";
+import {Login,Admin,AdminPanel,Register} from "../Pages";
 
 
 
@@ -20,18 +20,6 @@ const routes = [
         path : "/admin/home",
         description : "Admin Panel Page",
         element  : <AdminPanel />,
-    },
-    {
-        title:"User home",
-        path:"/home",
-        description:" ",
-        element:<Home/>,
-    },
-    {
-        title:"User profile",
-        path:"/prof",
-        description:" ",
-        element:<Profile/>,
     },
     {
         title : "Register",

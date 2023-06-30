@@ -1,0 +1,52 @@
+.maincontent{
+        margin-right: 7.5%;
+        margin-left: 7.5%;
+        
+        margin-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 2.5%;
+        padding-bottom: 7.5%;
+        display: flex;
+}
+.details{
+    
+    padding-left: 7.5%;
+        padding-right: 7.5%;
+        padding-top: 5%;
+        padding-bottom: 7.5%;
+    width: 70%;
+    height: auto;
+    border-image: linear-gradient(135deg, #19A7CE, #19182500, #19182500, #CC1B62) 30;
+        border-width: 3px;
+        border-style: solid;
+
+    
+}
+.data{
+    display: flex;
+    height: fit-content;
+}
+.stats{
+    width: 30%;
+    height: fit-content;
+    border-image: linear-gradient(135deg, #19A7CE, #19182500, #19182500, #CC1B62) 30;
+        border-width: 3px;
+        border-style: solid;
+    margin-left: 20px;
+}
+.left{
+    width: 65%;
+    
+    font-size: 110%;
+    line-height: 1;
+    
+}
+
+
+
+.right{
+    width: 35%;
+    
+    
+}

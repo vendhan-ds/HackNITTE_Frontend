@@ -2,7 +2,7 @@
 import { useState,useEffect } from "react";
 import "./styles.css";
 import axios from "axios";
-import { Button,Textarea,SegmentedControl,Select } from '@mantine/core';
+import { Button,Textarea,SegmentedControl,Select, Title } from '@mantine/core';
 
 
 const NativeContest = () => {
@@ -11,6 +11,7 @@ const NativeContest = () => {
     const [prob,setprob] = useState("-");
     const [dict,setdict] = useState({});
     const [lang,setlang] = useState("70");
+    const [status,setStatus] = useState({"A" : 0, "B" : 0, "C" : 0,"D" : 0});
 
     const updateProblem = (problem) => {
         if(dict[problem] == undefined){
@@ -40,10 +41,17 @@ const NativeContest = () => {
         document.querySelector("#problemName").innerText = req.data.data;
     }
 
+    const getStatus = async() => {
+        let req = await axios.get("/api/nativeContest/status");
+        let t2 = req.data.data;
+        setStatus({"A" : t2[0], "B" : t2[1], "C" : t2[2], "D" : t2[3]});
+    }
+
     useEffect(() => {
         fetchDetails();
         fetchProblem();
         updateProblem('A');
+        getStatus();
     },[])
 
     const setproblem = (problem) => {
@@ -56,7 +64,8 @@ const NativeContest = () => {
         let data = {'lang' : lang, 'prob' : prob, 'code' : document.querySelector('#code').value};
         let res = await axios.post("/api/nativeContest/submit",data);
         document.querySelector("#verdict").innerText = res.data.data;
-        
+        let t2 = res.data.Status;
+        setStatus({"A" : t2[0], "B" : t2[1], "C" : t2[2], "D" : t2[3]});
     }
     
     return (
@@ -75,6 +84,7 @@ const NativeContest = () => {
                     </div>) ) }
                     
             </div> */}
+            
             <SegmentedControl size="lg" onChange={(e) => setproblem(e)}
                         data={[
                             { label: problems[0][1], value: 'A' },
@@ -103,6 +113,7 @@ const NativeContest = () => {
 
                         })}
                         />
+            {status[prob]?<Title order={3} c = "green" style={{marginTop : "1rem"}}>Accepted</Title>:<br></br>}
             <div className="problemStatement">
                 <h3>Problem Statement</h3>
                 <p id="desc">Click any question to view</p>

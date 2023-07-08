@@ -3,8 +3,67 @@ import axios from 'axios';
 import { Paper,Card,Grid, Image, Text, Badge, Button, Group,Divider } from '@mantine/core';
 import { HeaderTabs } from "../../Components/header";
 import "./home.css"
+import { Link } from "react-router-dom";
 
 const Home=()=>{
+    const [contests,setContest]=useState([])
+
+    const getdata=async()=>{
+        let t=await axios.get("/api/getContests");
+      console.log(t.data.data)
+      const lc=t.data.data.leetcode;
+      const cc=t.data.data.codechef;
+      const cf=t.data.data.codeforces;
+      //const obj={};
+      const l=[];
+      lc.forEach(element => {
+
+        const obj={
+            name:element.name,
+            date:element.start_time.slice(0,10),
+            type:"leetcode",
+            details:element.start_time.slice(11,19)+" Z",
+            link:element.url
+        }
+        l.push(obj) 
+        //setContest(contests.push(obj))
+
+
+      });
+      cf.forEach(element => {
+
+        const obj={
+            name:element.name,
+            date:element.start_time.slice(0,10),
+            type:"codeforces",
+            details:element.start_time.slice(11,19)+" Z",
+            link:element.url
+        }
+        l.push(obj)
+        //setContest(contests.push(obj))
+
+
+      });
+      cc.forEach(element => {
+
+        const obj={
+            name:element.name,
+            date:element.start_time.slice(0,10),
+            type:"codechef",
+            details:element.start_time.slice(10),
+            link:element.url
+        }
+        l.push(obj)
+        //setContest(contests.push(obj))
+
+
+      });
+      setContest(l);
+
+    }
+    useEffect(() => {
+      getdata();
+    }, []);
     const hackthn=[
         {
             name:"Flipkart grid 5.0",
@@ -13,38 +72,6 @@ const Home=()=>{
         {
             name:"Flipkart grid 6.0",
             date:93783837,
-        }
-    ]
-    const contests=[
-        {
-            name:"biweekly",
-            date:123,
-            type:"leetcode",
-            link:"hfigs@leetcode"
-        },
-        {
-            name:"starter",
-            date:129243,
-            type:"codechef",
-            link:"hfigs@leetcode"
-        },
-        {
-            name:"codeTON",
-            date:122233,
-            type:"codeforces",
-            link:"hfigs@leetcode"
-        },
-        {
-            name:"starter",
-            date:129243,
-            type:"codechef",
-            link:"hfigs@leetcode"
-        },
-        {
-            name:"codeTON",
-            date:122233,
-            type:"codeforces",
-            link:"hfigs@leetcode"
         }
     ]
 
@@ -74,22 +101,27 @@ const Home=()=>{
 
     const items=contests.map((item,index)=>(
         <Grid.Col span={3}>
-            <Card className="card" key={index} shadow="sm" radius="sm" style={{backgroundColor:"rgba(0, 0, 0, 0.2)", padding:"1rem",borderColor:"#4ecdd4", borderWidth:"1.5px",color:"white",textAlign :"left", height : '7rem' }} withBorder>
+        <Link target={"_blank"} style={{
+            textDecoration:"None",color:"inherit"
+          }} to={item.link}>
+            <Card className="card" key={index} shadow="sm" radius="sm" style={{backgroundColor:"rgba(0, 0, 0, 0.2)", padding:"1rem",borderColor:"#4ecdd4", borderWidth:"1.5px",color:"white",textAlign :"left", height : '9rem' }} withBorder>
                 <div style={{display:"flex",justifyContent:"flex-end"}}>
-                    <Badge radius="xs" variant="gradient" gradient={{ from: 'transparent', to: '#4ecdd4', deg: 120 ,opacity:"0.5"}}>
+                    <Badge radius="none" variant="gradient" gradient={{ from: 'transparent', to: '#4ecdd4', deg: 120 ,opacity:"0.5"}} style={{position : "absolute", right : "0rem", top : "0.5rem" }}>
                     {item.type}
                     </Badge>
                 </div>
                 
-                    <Text weight={500}>{item.name}</Text>
+                    <Text weight={500}  style={{marginTop : "1rem"}}>{item.name}</Text>
                     
-                <Text size="sm" style={{marginTop : "1rem"}}>
-                    STARTS ON : <span className="blue">{item.date}</span>
+                <Text size="sm" style={{marginTop : "0.5rem"}}>
+                    DATE : <span className="blue">{item.date}</span>
                 </Text>
                 <Text size="sm" >
-                    {item.details}
+                    TIME : <span className="blue">{item.details}</span>
                 </Text>
             </Card>
+          </Link>
+            
         </Grid.Col>
         
     ))
@@ -112,7 +144,7 @@ const Home=()=>{
                     <h2 style={{textAlign:"left"}}>UPCOMING CONTESTS </h2>
                     <hr></hr>
                     <Grid  gutter="md">
-                        {items}
+                        {contests.length == 0?<h3>Loading...</h3>:items}
                     </Grid>
                     
                 </div>

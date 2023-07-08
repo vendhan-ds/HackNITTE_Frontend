@@ -7,6 +7,7 @@ import { async } from "q";
 
 
 const Profile = () => {
+    const [ratings,setratings] = useState([0,0,0]);
     const [data,setdata]=useState({
         name:"John Doe",
         roll:106121039,
@@ -41,6 +42,7 @@ const Profile = () => {
             contributions : '-',
             contests : '-',
         })
+        setratings([parseInt(res[6]), parseInt(res[7]), parseInt(res[8])])
     }
 
     useEffect(() => {
@@ -81,9 +83,9 @@ const Profile = () => {
                     <div className="right">
                         <RingProgress style={{marginTop:"30%"}} size={200}
       thickness={30} label={<Text size="md" align="center">{data.rating}</Text>} sections={[
-          { value: 50, color: 'cyan', tooltip: 'Codechef' },
-          { value: 25, color: 'orange', tooltip: 'codeforces' },
-          { value: 25, color: 'grape', tooltip: 'leetcode' },
+          { value: ((100*ratings[0])/data.rating), color: 'cyan', tooltip: 'Codechef - ' + ratings[0] },
+          { value: ((100*ratings[1])/data.rating), color: 'orange', tooltip: 'codeforces - ' + ratings[1] },
+          { value: ((100*ratings[2])/data.rating), color: 'grape', tooltip: 'leetcode - ' + ratings[2]  },
         ]}
                         />
                     </div>

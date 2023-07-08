@@ -1,0 +1,16 @@
+.contents{
+    margin-right: 7.5%;
+        margin-left: 7.5%;
+        margin-top: 2.5%;
+        margin-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 2.5%;
+        padding-bottom: 7.5%;
+        text-align: left;
+        /* border-image: linear-gradient(135deg, #19A7CE, #19182500, #19182500, #CC1B62) 30; */
+        background: #19182558;
+        border-radius: 0.5rem;
+        min-height: 5rem;
+        height: 40rem;
+}

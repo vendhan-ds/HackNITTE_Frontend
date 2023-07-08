@@ -1,13 +1,22 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import { Paper,Card,Grid, Image, Text, Badge, Button, Group,Divider } from '@mantine/core';
+import { Paper,Card,Grid, Image, Text, Badge, Button, Group,Divider,Notification } from '@mantine/core';
 import { HeaderTabs } from "../../Components/header";
 import "./home.css"
 import { Link } from "react-router-dom";
 
 const Home=()=>{
     const [contests,setContest]=useState([])
+    const [log, setLog] = useState(1);
+    useEffect(() => {
+    const timer = setTimeout(() => {
+      setLog(0);
+    }, 5000);
 
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
     const getdata=async()=>{
         let t=await axios.get("/api/getContests");
       console.log(t.data.data)
@@ -158,7 +167,21 @@ const Home=()=>{
                 </div>
                 
             </div>
-            
+            {log ?(
+      <Notification style={{
+        position:"absolute",
+        right:"5rem",
+        bottom:"5rem"
+      }}
+        color="teal"
+        title="Login successful."
+        description="Please check your credentials"
+        onClose={()=>setLog(0)}
+        position="bottom-right"
+        withCloseButton
+        
+      />
+    ):(<></>)}
         </div>
     )
 }

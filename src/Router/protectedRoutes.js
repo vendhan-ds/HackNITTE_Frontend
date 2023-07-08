@@ -1,4 +1,4 @@
-import {Profile, NativeContest, LeaderBoard,Home} from "../Pages";
+import {Profile, NativeContest,Contest, LeaderBoard,Home} from "../Pages";
 
 
 const protectedRoutes = [
@@ -13,6 +13,12 @@ const protectedRoutes = [
         path : "/nativeContest",
         description : "Native Contest Page",
         element  : <NativeContest />,
+    },
+    {
+        title : "Contests",
+        path : "/contest",
+        description : "Pre Contest Page",
+        element  : <Contest />,
     },
     {
         title : "LeaderBoard",

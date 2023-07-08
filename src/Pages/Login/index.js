@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import './login.css';
 import hacknitte from '../../Images/hacknitte.png'
+import { Notification } from '@mantine/core';
 import show from '../../Images/show.png'
 import hide from '../../Images/hide.png';
 import { Link } from 'react-router-dom';
@@ -12,6 +13,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [log, setLog] = useState(0);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -27,7 +29,10 @@ function Login() {
     let req = await axios.post('/api/auth/login',data);
     req = req.data.res;
     if(req){
+      //setLog(0);
       navigate('/home');
+    }else{
+      setLog(1)
     }
   }
   const handleSubmit = (e) => {
@@ -41,6 +46,17 @@ function Login() {
     // }
     // authentication here
   };
+  
+
+   useEffect(() => {
+    const timer = setTimeout(() => {
+      setLog(0);
+    }, 5000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  },);
     // const [text, setText] = useState("");
   
     // const getTest = async () => {
@@ -110,6 +126,21 @@ function Login() {
           </button>
         </form>
       </div>
+      {log ?(
+      <Notification style={{
+        position:"absolute",
+        right:"5rem",
+        bottom:"5rem"
+      }}
+        color="red"
+        title="Login unsuccessful."
+        description="Please check your credentials"
+        onClose={()=>setLog(0)}
+        position="bottom-right"
+        withCloseButton
+        
+      />
+    ):(<></>)}
       </div>
     );
   }

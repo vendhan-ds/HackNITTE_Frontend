@@ -13,6 +13,7 @@
         /* border-image: linear-gradient(135deg, #19A7CE, #19182500, #19182500, #CC1B62) 30; */
         background:  #19182558;
         border-radius: 0.5rem;
+        min-height: 70 px;
         /* border-width: 3px;
         border-style: solid; */
 }

@@ -1,0 +1,170 @@
+
+  .title-logo{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #CFCFD9;
+    font-size: 35px;
+  }
+  .image-hack{
+    height: 50px;
+    width: 50px;
+  }
+  .logo{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+  .hacknitte{
+    text-decoration: solid;
+    position: absolute;
+    top: 48px;
+    left: 120px;
+    color: #ffffff;
+    font-size: 35px;
+  }
+
+  label{
+    color: #24C6DC;
+  }
+
+ .welcome {
+    padding-top: 10px;
+    color: #E1F2F5;
+    font-size: 33px;
+    margin-top: -24px;
+    margin-bottom: -10px;
+    text-align: center;
+  }
+  
+  .login-text {
+    font-weight: lighter;
+    text-align: center;
+    color: #24C6DC;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+  }
+  
+  input {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    background-color: #191825;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    padding-right: 0;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1.4px solid #ccc;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .no-account-div{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin: auto;
+  }
+  .no-account{
+    color: #24C6DC;
+    font-size: 11px;
+    margin-top: 1px;
+  }
+  .forgot-password {
+    text-decoration: none;
+    display: block;
+    margin-right: auto;
+    margin-bottom: 20px;
+    text-align: right;
+  }
+  .password-eye{
+    margin-bottom: 6px;
+    height: 23px;
+  }
+  .login{
+    color: #E1F2F5;
+   margin: 10px;
+   font-size: 22px;
+   text-decoration: solid;
+   text-emphasis: bold;
+  }
+
+  .login-btn {
+    justify-content: center;
+    width: 100%;
+    padding: 1px;
+    background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s;
+    background-size: 200% auto;
+    margin-top: 1rem;
+  }
+
+ 
+  .login-btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
+  
+  /* Responsive Styles */
+  
+  @media screen and (max-width: 480px) {
+    .card {
+      width: 100%;
+      margin: auto;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    body{
+      padding-right: 50px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    body{
+      padding-right: 65px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    body{
+      padding-right: 70px;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    body{
+      padding-right: 75px;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .all-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+    
+  
+ 

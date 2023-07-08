@@ -32,13 +32,13 @@ const AdminPanel = () => {
         <div>
             {admin && <div>
                 <h1>Admin Stuff</h1>
-                <textarea id="query" rows="4" cols="50" placeholder="query"></textarea>
+                <textarea id="query" rows="10" cols="100" placeholder="query"></textarea>
                 <br></br>
                 <input type="password" id="key" placeholder="key"></input>
                 <button onClick={query}>Submit</button>
                 <br></br>
                 <br></br>
-                <textarea id="result" rows="10" cols="50" placeholder="result" disabled = "true"></textarea>
+                <textarea id="result" rows="20" cols="100" placeholder="result" disabled = "true"></textarea>
             </div>}
         </div>
         

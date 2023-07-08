@@ -1,11 +1,5 @@
-.upcomingContests {
 
-    margin-right: 7.5%;
-    
-}
-.upcomingContests h1{
-    font-size: x-large;
-}
+
 
 .content{
     margin-right: 7.5%;
@@ -16,15 +10,14 @@
         padding-right: 5%;
         padding-top: 2.5%;
         padding-bottom: 7.5%;
-        border-image: linear-gradient(135deg, #19A7CE, #19182500, #19182500, #CC1B62) 30;
-        border-width: 3px;
-        border-style: solid;
+        /* border-image: linear-gradient(135deg, #19A7CE, #19182500, #19182500, #CC1B62) 30; */
+        background:  #19182558;
+        border-radius: 0.5rem;
+        /* border-width: 3px;
+        border-style: solid; */
 }
 
 
-.upcomingHackathons {
-    margin-right: 7.5%;
-}
 
 .card{
     background-color: "rgba(0, 0, 0, 0.4)"; padding:"5%"; 
@@ -34,14 +27,35 @@
 
 .announcements{
     margin-right: 7.5%;
-    border-color: "#4ecdd4";
-    border-width: "2px";
-    width: 100px;
-    height:100px
+    border-color: #24C6DC;
+    border-width: 1px;
+    border-style: solid;
+    width: 100%;
+    border-radius: 0.5rem;
+    min-height:6rem;
+    text-align: left;
+    padding: 0.5rem;
+    background-color: #24c7dc10;
+}
+
+.announcements p{
+    margin: 0;
 }
 .card:hover{
     color:black;
     scale:1.05;
     background-color:"#4ecdd4" ;
     transition:background-color 0.3s ease-in-out ;
+}
+
+hr{
+    height: 0.5px;
+    border: none;
+    /* background: linear-gradient(175deg, #19A7CE 0%, rgba(25, 167, 206, 0.00) 100%); */
+    background-color: #24C6DC;
+    margin-bottom: 2rem ;
+}
+
+.blue{
+    color: #19A7CE;
 }

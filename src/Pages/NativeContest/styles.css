@@ -1,0 +1,102 @@
+
+
+
+.contestcontainer{
+    margin: 1rem 2rem;
+    color: #EFEFEF;
+}
+
+.problemStatement{
+    text-align: left;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.problemBox{
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    width: fit-content;
+}
+
+.problemStatus{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.vjudge_sample {
+    border: 1px solid rgba(255, 255, 255, 0.163);
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    background-color: #EFEFEF11;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: rgba(255, 255, 255, 0.163);
+}
+
+th{
+    padding: 0.5rem;
+}
+td{
+    padding: 0 0.5rem;
+    width: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.163);
+}
+
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+
+}
+
+.vjudge_sample th span.copier {
+    display: none;
+}
+pre {
+    display: block;
+    font-family: monospace;
+}
+.tex-font-style-tt {
+    font-weight: bold;
+}
+
+.done{
+    color: blue;
+}
+
+.codeSpace{
+    margin: 10rem 0;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#code{
+    display: block;
+    margin-bottom: 5rem;
+    width: 40rem;
+}
+
+#lang{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 0;
+    display: inline-block;
+    margin-right: 5rem;
+}
+
+#lang option{
+    border-radius: 0;
+}

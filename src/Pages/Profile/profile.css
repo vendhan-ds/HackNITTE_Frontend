@@ -1,8 +1,6 @@
 .maincontent{
         margin-right: 7.5%;
         margin-left: 7.5%;
-        
-        margin-bottom: 5%;
         padding-left: 5%;
         padding-right: 5%;
         padding-top: 2.5%;
@@ -11,15 +9,14 @@
 }
 .details{
     
-    padding-left: 7.5%;
-        padding-right: 7.5%;
-        padding-top: 5%;
-        padding-bottom: 7.5%;
-    width: 70%;
-    height: auto;
-    border-image: linear-gradient(135deg, #19A7CE, #19182500, #19182500, #CC1B62) 30;
+        padding: 2rem;
+        width: 70%;
+        height: auto;
+        background:  #19182585;
+        border-radius: 0.5rem;
+        /* border-image: linear-gradient(135deg, #19A7CE, #19182500, #CC1B62) 30;
         border-width: 3px;
-        border-style: solid;
+        border-style: solid; */
 
     
 }
@@ -30,15 +27,18 @@
 .stats{
     width: 30%;
     height: fit-content;
-    border-image: linear-gradient(135deg, #19A7CE, #19182500, #19182500, #CC1B62) 30;
-        border-width: 3px;
-        border-style: solid;
+    background:  #19182585;
+    /* border-image: linear-gradient(135deg, #19A7CE, #19182500, #CC1B62) 30;
+    border-width: 3px;
+    border-style: solid; */
+    border-radius: 0.5rem;
+
     margin-left: 20px;
 }
 .left{
     width: 65%;
     
-    font-size: 110%;
+    font-size: 100%;
     line-height: 1;
     
 }
@@ -49,4 +49,8 @@
     width: 35%;
     
     
+}
+
+.stats p{
+    margin: 0;
 }

@@ -23,8 +23,9 @@ export function HeaderTabs() {
 
   return (
     <div className='headerdiv'>
-      <nav className='container'>
-        <h1>HackNITT</h1>
+      <h1>HackNITTe</h1>
+      <nav className='containerNav'>
+        
         <ul>
           <li value="home"><Link style={{
             textDecoration:"None",color:"inherit"
@@ -34,14 +35,14 @@ export function HeaderTabs() {
           }} to="#"> Learn</Link></li>
           <li value="compete"><Link style={{
             textDecoration:"None",color:"inherit"
-          }} to="#"> Compete</Link></li>
+          }} to="/nativeContest"> Compete</Link></li>
           <li value="about"><Link style={{
             textDecoration:"None",color:"inherit"
-          }} to="#"> About</Link></li>
+          }} to="/leaderboard"> LeaderBoard</Link></li>
         </ul>
         <Link style={{
             textDecoration:"None",color:"inherit"
-          }} to="/prof"><img className='profilepic' src="./profile.jpg"/></Link>
+          }} to="/profile"><img className='profilepic' src="./profile.svg"/></Link>
         
       </nav>
     </div>

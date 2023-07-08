@@ -5,3 +5,5 @@ export {default as Admin} from "./AdminLogin/index";
 export {default as AdminPanel} from "./AdminPanel/index";
 export {default as Home} from "./Home/index";
 export {default as Register} from "./Register/index";
+export {default as NativeContest} from "./NativeContest/index";
+export {default as LeaderBoard} from "./Leaderboard/index";

@@ -8,6 +8,7 @@ import hide from '../../Images/hide.png';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
+
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -30,6 +31,7 @@ function Login() {
     req = req.data.res;
     if(req){
       //setLog(0);
+      sessionStorage.setItem('isLoggedIn', 1);
       navigate('/home');
     }else{
       setLog(1)
@@ -127,8 +129,9 @@ function Login() {
         </form>
       </div>
       {log ?(
-      <Notification style={{
-        position:"absolute",
+      <div className="notification-container">
+        <Notification className="notification" style={{
+        position:"fixed",
         right:"5rem",
         bottom:"5rem"
       }}
@@ -140,6 +143,8 @@ function Login() {
         withCloseButton
         
       />
+
+      </div>
     ):(<></>)}
       </div>
     );

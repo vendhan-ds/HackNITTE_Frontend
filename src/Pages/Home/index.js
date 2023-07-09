@@ -10,7 +10,9 @@ const Home=()=>{
     const [log, setLog] = useState(1);
     useEffect(() => {
     const timer = setTimeout(() => {
+
       setLog(0);
+      sessionStorage.removeItem('isLoggedIn');
     }, 5000);
 
     return () => {
@@ -26,12 +28,15 @@ const Home=()=>{
       //const obj={};
       const l=[];
       lc.forEach(element => {
-
+        const utcDate = new Date(element.start_time)
+        const istDate = new Date(utcDate.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+        const yearMonthDay = istDate.toLocaleString('en-IN', { year: 'numeric', month: '2-digit', day: '2-digit' });
+        const hourMinute = istDate.toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit' });
         const obj={
             name:element.name,
-            date:element.start_time.slice(0,10),
+            date:yearMonthDay,
             type:"leetcode",
-            details:element.start_time.slice(11,19)+" Z",
+            details:hourMinute,
             link:element.url
         }
         l.push(obj) 
@@ -40,12 +45,15 @@ const Home=()=>{
 
       });
       cf.forEach(element => {
-
+        const utcDate = new Date(element.start_time)
+        const istDate = new Date(utcDate.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+        const yearMonthDay = istDate.toLocaleString('en-IN', { year: 'numeric', month: '2-digit', day: '2-digit' });
+        const hourMinute = istDate.toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit' });
         const obj={
             name:element.name,
-            date:element.start_time.slice(0,10),
+            date:yearMonthDay,
             type:"codeforces",
-            details:element.start_time.slice(11,19)+" Z",
+            details:hourMinute,
             link:element.url
         }
         l.push(obj)
@@ -54,12 +62,15 @@ const Home=()=>{
 
       });
       cc.forEach(element => {
-
+        const utcDate = new Date(element.start_time)
+        const istDate = new Date(utcDate.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+        const yearMonthDay = istDate.toLocaleString('en-IN', { year: 'numeric', month: '2-digit', day: '2-digit' });
+        const hourMinute = istDate.toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit' });
         const obj={
             name:element.name,
-            date:element.start_time.slice(0,10),
+            date:yearMonthDay,
             type:"codechef",
-            details:element.start_time.slice(10),
+            details:hourMinute,
             link:element.url
         }
         l.push(obj)
@@ -167,16 +178,16 @@ const Home=()=>{
                 </div>
                 
             </div>
-            {log ?(
-      <Notification style={{
-        position:"absolute",
+            {(log && sessionStorage.getItem('isLoggedIn')) ?(
+      <Notification className="notif" style={{
+        position:"fixed",
         right:"5rem",
-        bottom:"5rem"
+        bottom:"5rem",
       }}
         color="teal"
         title="Login successful."
         description="Please check your credentials"
-        onClose={()=>setLog(0)}
+        onClose={()=>{sessionStorage.removeItem('isLoggedIn');setLog(0)}}
         position="bottom-right"
         withCloseButton
         

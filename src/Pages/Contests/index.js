@@ -9,7 +9,7 @@ const Contest=()=>{
     const data={
         time:"July 8, 2023 15:13:00",
         name:"CONTEST 101",
-        isActive:0,
+        isActive:1,
                      
     }
     const [timeRem,setTimeRem]=useState("");
@@ -54,7 +54,10 @@ Furthermore, we encourage all participants to contribute to maintaining the just
                     <Link style={{
             textDecoration:"None",color:"inherit"
           }} to="/nativeContest">
+                <div style={{display:"flex",justifyContent:"center"}}>
                     <Button> Start Contest</Button>
+                </div>
+                    
                     </Link>
                     
                     

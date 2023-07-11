@@ -81,7 +81,7 @@ const Profile = () => {
                         
                     </div>
                     <div className="right">
-                        <RingProgress style={{marginTop:"30%"}} size={200}
+                        <RingProgress style={{marginTop:"0%"}} size={200}
       thickness={30} label={<Text size="md" align="center">{data.rating}</Text>} sections={[
           { value: ((100*ratings[0])/data.rating), color: 'cyan', tooltip: 'Codechef - ' + ratings[0] },
           { value: ((100*ratings[1])/data.rating), color: 'orange', tooltip: 'codeforces - ' + ratings[1] },

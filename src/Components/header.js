@@ -23,10 +23,13 @@ export function HeaderTabs() {
 
   return (
     <div className='headerdiv'>
-      <h1>HackNITTe</h1>
+      <div className='title'>
+        <h1>HackNITTe</h1>
+      </div>
+      
       <nav className='containerNav'>
         
-        <ul>
+        <ul className='pages'>
           <li value="home"><Link style={{
             textDecoration:"None",color:"inherit"
           }} to="/home"> Home</Link></li>
@@ -40,9 +43,12 @@ export function HeaderTabs() {
             textDecoration:"None",color:"inherit"
           }} to="/leaderboard"> LeaderBoard</Link></li>
         </ul>
-        <Link style={{
+        <div className='profilepic'>
+          <Link style={{
             textDecoration:"None",color:"inherit"
           }} to="/profile"><img className='profilepic' src="./profile.svg"/></Link>
+        </div>
+        
         
       </nav>
     </div>

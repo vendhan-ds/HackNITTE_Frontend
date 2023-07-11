@@ -6,8 +6,38 @@ import "./home.css"
 import { Link } from "react-router-dom";
 
 const Home=()=>{
+
     const [contests,setContest]=useState([])
     const [log, setLog] = useState(1);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [spn, setSpn] = useState(3);
+    
+    useEffect(()=>{
+        if(window.innerWidth<=600){
+                setSpn(6);
+            }else if(window.innerWidth<=820){
+                setSpn(4)
+            }else{
+                setSpn(3)
+            }
+        const handleResize=()=>{
+           
+            setWindowWidth(window.innerWidth);
+            if(window.innerWidth<=600){
+                setSpn(6);
+            }else if(window.innerWidth<=820){
+                setSpn(4)
+            }else{
+                setSpn(3)
+            }
+        }
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+        
+    },[])
     useEffect(() => {
     const timer = setTimeout(() => {
 
@@ -106,21 +136,18 @@ const Home=()=>{
     },[])
 
     const items2=hackthn.map((item,index)=>(
-        <Grid.Col span={3}>
+        <Grid.Col span={spn}>
             <Card className="card" key={index} shadow="sm" radius="sm" style={{backgroundColor:"rgba(0, 0, 0, 0.2)", padding:"1rem",borderColor:"#4ecdd4", borderWidth:"1.5px",color:"white",textAlign : 'left'}} withBorder >
                 <Text weight={500}>{item.name}</Text>
                 <Text size="sm" style={{marginTop : "1rem"}} >
                     Registration Ends on : <span className="blue">{item.date}</span>
-                </Text>
-                
-
-                
+                </Text>                
             </Card>
         </Grid.Col>
     ))
 
     const items=contests.map((item,index)=>(
-        <Grid.Col span={3}>
+        <Grid.Col span={spn} className="custom-col">
         <Link target={"_blank"} style={{
             textDecoration:"None",color:"inherit"
           }} to={item.link}>

@@ -8,3 +8,4 @@ export {default as Register} from "./Register/index";
 export {default as NativeContest} from "./NativeContest/index";
 export {default as LeaderBoard} from "./Leaderboard/index";
 export {default as Contest} from "./Contests/index";
+export {default as ComingSoon}from "./ComingSoon/index";

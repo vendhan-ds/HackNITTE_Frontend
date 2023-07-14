@@ -1,7 +1,13 @@
-import {Profile, NativeContest,Contest, LeaderBoard,Home} from "../Pages";
+import {Profile, NativeContest,Contest, LeaderBoard,Home,ComingSoon} from "../Pages";
 
 
 const protectedRoutes = [
+    {
+        title:"Coming soon",
+        path:"/learn",
+        description:"comingsoon",
+        element:<ComingSoon/>,
+    },
     {
         title : "Profile",
         path : "/profile",

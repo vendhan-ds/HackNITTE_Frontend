@@ -35,7 +35,7 @@ export function HeaderTabs() {
           }} to="/home"> Home</Link></li>
           <li value="learn"><Link style={{
             textDecoration:"None",color:"inherit"
-          }} to="#"> Learn</Link></li>
+          }} to="/learn"> Learn</Link></li>
           <li value="compete"><Link style={{
             textDecoration:"None",color:"inherit"
           }} to="/contest"> Compete</Link></li>

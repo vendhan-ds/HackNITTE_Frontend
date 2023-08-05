@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Contest=()=>{
     const data={
-        time:"July 8, 2023 15:13:00",
+        time:"July 15, 2023 23:30:00",
         name:"CONTEST 101",
         isActive:1,
                      
@@ -20,7 +20,7 @@ const Contest=()=>{
             const cur=new Date();
             const x=Math.abs((d-cur));
         
-        const hours=Math.floor(((x)/(1000*60*60))%24);
+        const hours=Math.floor(((x)/(1000*60*60)));
         const minutes=Math.floor(((x)/(1000*60))%60);
         const seconds=Math.floor(((x)/(1000))%60);
             setTimeRem(` ${hours} hrs ${minutes} mins ${seconds} seconds`);
